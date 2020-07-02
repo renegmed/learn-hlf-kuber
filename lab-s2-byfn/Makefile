@@ -17,6 +17,6 @@ configtx-4:
 
 
 up:
-	docker-compose up --build -d 
+	docker-compose up -d
 
 
