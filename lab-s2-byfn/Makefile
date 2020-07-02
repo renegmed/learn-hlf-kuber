@@ -1,7 +1,7 @@
 # Step 1. created folder crypto-config
 cryptogen:
 	cryptogen generate --config=./crypto-config.yaml 
-	
+
 # Step 2. create channel artifacts
 configtx-1:
 	configtxgen -profile TwoOrgsOrdererGenesis -channelID syschannel -outputBlock channel-artifacts/genesis.block
@@ -14,5 +14,9 @@ configtx-3:
 
 configtx-4:
 	configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID mychannel -asOrg Org2MSP # i.e. this channel belongs to Org2MSP
+
+
+up:
+	docker-compose up --build -d 
 
 
